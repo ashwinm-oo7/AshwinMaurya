@@ -7,9 +7,26 @@ function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
+
   const toggleMenu = () => {
-    document.querySelector(".nav-links").classList.toggle("show");
+    const menu = document.querySelector(".nav-links");
+    menu.classList.toggle("show");
   };
+
+  const closeMenu = () => {
+    const menu = document.querySelector(".nav-links");
+    if (menu.classList.contains("show")) {
+      menu.classList.remove("show"); // Ensure menu closes on item click
+    }
+  };
+  document.addEventListener("click", (event) => {
+    const menu = document.querySelector(".nav-links");
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      menu.classList.remove("show");
+    }
+  });
 
   return (
     <div className="container">
@@ -29,7 +46,13 @@ function App() {
               "Awards",
               "Contact",
             ].map((tab) => (
-              <li key={tab} onClick={() => scrollToSection(tab)}>
+              <li
+                key={tab}
+                onClick={() => {
+                  scrollToSection(tab);
+                  closeMenu();
+                }}
+              >
                 {tab}
               </li>
             ))}
