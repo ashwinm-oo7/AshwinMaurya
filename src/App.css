@@ -54,9 +54,6 @@
   transition: color 0.3s ease;
 }
 
-.nav-links li:hover {
-  color: #ff4500;
-}
 
 /* Global Reset */
 
@@ -400,24 +397,47 @@ section:nth-child(even) {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* 🟢 Mobile-Specific Styles */
+@media (max-width: 600px) {
   .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on smaller screens */
+    gap: 8px;
   }
 
   .skill-card {
-    padding: 15px;
+    padding: 10px;
   }
 
   .skill-logo {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 
   .skill-card span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
+
+@media (max-width: 400px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on very small screens */
+    gap: 6px;
+  }
+
+  .skill-card {
+    padding: 8px;
+  }
+
+  .skill-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skill-card span {
+    font-size: 0.8rem;
+  }
+}
+
 /* About Me Section */
 .about-container {
   display: flex;
@@ -591,4 +611,34 @@ p {
   text-align: center;
   margin-bottom: 20px;
   opacity: 0.8; /* Slightly faded effect */
+}
+@media (max-width: 768px) {
+  #Home {
+    padding: 30px 15px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .typing {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+
+  }
 }
