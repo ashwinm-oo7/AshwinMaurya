@@ -1,15 +1,16 @@
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
-    flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 60px; /* Adjust based on your header height */
     left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 15px 0;
-    text-align: center;
-  }
+    width: 30%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    height: 1300px;
+    }
 
   .nav-links.show {
     display: flex;
@@ -41,7 +42,7 @@
   }
 }
 .nav-links {
-  display: flex;
+  /* display: flex; */
   gap: 20px;
   list-style: none;
 }
@@ -112,7 +113,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 20px;
 }
 

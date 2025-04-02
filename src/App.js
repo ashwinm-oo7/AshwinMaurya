@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import logo from "./logo.jpg";
 import background from "./bg-image.jpg";
@@ -19,15 +19,27 @@ function App() {
       menu.classList.remove("show"); // Ensure menu closes on item click
     }
   };
-  document.addEventListener("click", (event) => {
-    const menu = document.querySelector(".nav-links");
-    const menuToggle = document.querySelector(".menu-toggle");
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menu = document.querySelector(".nav-links");
+      const menuToggle = document.querySelector(".menu-toggle");
 
-    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-      menu.classList.remove("show");
-    }
-  });
+      if (menu && menuToggle) {
+        if (
+          !menu.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          menu.classList.remove("show");
+        }
+      }
+    };
 
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="container">
       {/* Navigation Bar */}
@@ -48,7 +60,8 @@ function App() {
             ].map((tab) => (
               <li
                 key={tab}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent click from propagating to document event
                   scrollToSection(tab);
                   closeMenu();
                 }}
