@@ -471,6 +471,12 @@ section:nth-child(even) {
   margin-bottom: 15px;
 }
 
+@media (max-width: 600px) {
+  .about-content a {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
 .linkedin-btn {
   display: inline-block;
   padding: 10px 20px;
@@ -585,6 +591,17 @@ p {
   animation: typing 3s steps(25, end) forwards, blink 0.7s infinite;
   margin-bottom: 2rem;
 }
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(15deg); }
+  40% { transform: rotate(-5deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 
 /* Typing effect */
 @keyframes typing {

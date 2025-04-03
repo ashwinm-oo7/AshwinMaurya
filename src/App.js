@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import logo from "./logo.jpg";
 import background from "./bg-image.jpg";
+import Projects from "./Projects";
 function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -56,6 +57,7 @@ function App() {
               "Experience",
               "Certifications",
               "Awards",
+              "Projects",
               "Contact",
             ].map((tab) => (
               <li
@@ -98,11 +100,20 @@ function App() {
           <h2 style={{ backgroundColor: "" }}>
             <span
               style={{
+                display: "inline-block",
+                animation: "wave 1.5s infinite ease-in-out",
+                transformOrigin: "70% 70%",
+              }}
+            >
+              👋
+            </span>{" "}
+            <span
+              style={{
                 color: "white",
                 fontWeight: "bold",
               }}
             >
-              👋 Hello, I'm
+              Hello, I'm
             </span>{" "}
             <span style={{ color: "red", fontWeight: "bold" }}>
               Ashwini Kumar Maurya
@@ -370,6 +381,9 @@ function App() {
               </p>
             </div>
           </div>
+        </section>
+        <section id="projects">
+          <Projects />
         </section>
         <section id="Contact">
           <h2>Contact Me 📬</h2>
