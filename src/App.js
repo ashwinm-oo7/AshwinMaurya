@@ -4,6 +4,7 @@ import "./App.css";
 import logo from "./logo.jpg";
 import background from "./bg-image.jpg";
 import Projects from "./Projects";
+import Education from "./Education";
 function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -55,9 +56,10 @@ function App() {
               "About",
               "Skills",
               "Experience",
-              "Certifications",
-              "Awards",
               "Projects",
+              "Certifications",
+              "Educations",
+              "Awards",
               "Contact",
             ].map((tab) => (
               <li
@@ -152,7 +154,35 @@ function App() {
         </section>
 
         <section id="About">
-          <h2>About Me</h2>
+          <h2>
+            About Me{" "}
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle
+                cx="32"
+                cy="20"
+                r="10"
+                fill="#fabb3d"
+                stroke="white"
+                stroke-width="2"
+              />
+              <path
+                d="M16 50 C16 38, 48 38, 48 50"
+                fill="#fabb3d"
+                stroke="white"
+                stroke-width="2"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="8"
+                fill="#3498db"
+                stroke="white"
+                stroke-width="2"
+              />
+              <rect x="48" y="47" width="4" height="6" fill="white" />
+              <circle cx="50" cy="44" r="2" fill="white" />
+            </svg>
+          </h2>
           <div className="about-container">
             <img
               // src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" https://github.com/ashwinm-oo7/upgrad/tree/main
@@ -202,7 +232,34 @@ function App() {
         </section>
 
         <section id="Skills">
-          <h2>Skills</h2>
+          <h2>
+            Skills{" "}
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle
+                cx="32"
+                cy="32"
+                r="8"
+                fill="#fabb3d"
+                stroke="white"
+                stroke-width="2"
+              />
+              <path
+                d="M32 10 L38 15 L44 12 L46 18 L52 20 L50 26 L56 32 L50 38 L52 44 L46 46 L44 52 L38 49 L32 54 L26 49 L20 52 L18 46 L12 44 L15 38 L10 32 L15 26 L12 20 L18 18 L20 12 L26 15 Z"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+              />
+              <circle
+                cx="32"
+                cy="12"
+                r="5"
+                fill="gold"
+                stroke="white"
+                stroke-width="2"
+              />
+              <rect x="30" y="17" width="4" height="6" fill="white" />
+            </svg>
+          </h2>
           <div className="skills-container">
             {[
               {
@@ -255,7 +312,52 @@ function App() {
         </section>
 
         <section id="Experience">
-          <h2>Experience</h2>
+          <h2>
+            Experience{" "}
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle
+                cx="32"
+                cy="18"
+                r="8"
+                fill="#333"
+                stroke="white"
+                stroke-width="2"
+              />
+              <path
+                d="M20 40c0-8 6-12 12-12s12 4 12 12v12H20V40z"
+                fill="#555"
+                stroke="white"
+                stroke-width="2"
+              />
+              <rect
+                x="12"
+                y="36"
+                width="40"
+                height="20"
+                rx="3"
+                fill="#fabb3d"
+                stroke="white"
+                stroke-width="2"
+              />
+              <rect
+                x="20"
+                y="32"
+                width="24"
+                height="8"
+                rx="2"
+                fill="#d98b2b"
+                stroke="white"
+                stroke-width="2"
+              />
+              <rect x="28" y="38" width="8" height="6" rx="1" fill="white" />
+              <polygon
+                points="32,4 35,11 42,12 36,17 38,24 32,20 26,24 28,17 22,12 29,11"
+                fill="gold"
+                stroke="white"
+                stroke-width="1"
+              />
+            </svg>
+          </h2>
           <div className="experience-container">
             <div className="experience-timeline">
               <div className="experience-card">
@@ -283,9 +385,30 @@ function App() {
             </div>
           </div>
         </section>
-
+        <section id="projects">
+          <Projects />
+        </section>
         <section id="Certifications">
-          <h2>Certifications</h2>
+          <h2>
+            Certifications{" "}
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle
+                cx="32"
+                cy="32"
+                r="30"
+                stroke="white"
+                stroke-width="4"
+                fill="gold"
+              />
+              <polygon
+                points="32,6 38,24 56,24 40,36 46,54 32,44 18,54 24,36 8,24 26,24"
+                fill="white"
+                stroke="white"
+                stroke-width="2"
+              />
+              <circle cx="32" cy="32" r="10" fill="white" />
+            </svg>
+          </h2>
           <div className="certifications-container">
             <div className="cert-card">
               <img
@@ -338,7 +461,9 @@ function App() {
             </div>
           </div>
         </section>
-
+        <section id="Educations">
+          <Education />
+        </section>
         <section id="Awards">
           <h2>Awards & Achievements 🏆</h2>
           <div className="awards-container">
@@ -382,9 +507,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="projects">
-          <Projects />
-        </section>
+
         <section id="Contact">
           <h2>Contact Me 📬</h2>
           <div className="contact-container">
